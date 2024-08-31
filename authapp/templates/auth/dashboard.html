@@ -1,0 +1,23 @@
+{% extends "app.html" %}
+
+{% block title %}
+  Django Auth - Dashboard Page
+{% endblock %}
+
+{% block content %} 
+<h1 class="text-center mt-3">Welcome <b>{{request.user.username}}</b></h1>
+<div class="text-center">
+    <p>Welcome to My Django Application. Thank you for signing up</p>
+    <a href="/logout/" class="btn btn-primary mb-3"> Log out</a>
+</div>
+{% if messages %}
+  <div class="mt-3">
+    {% for message in messages %}
+      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% endblock %}

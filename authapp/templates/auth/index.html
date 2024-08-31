@@ -1,0 +1,24 @@
+{% extends "app.html" %}
+
+{% block title %}
+  Django Auth - Welcome Page
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-3">Welcome to my Application</h1>
+{% if messages %}
+  <div class="mt-3">
+    {% for message in messages %}
+      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+<div class="text-center">
+    <p>Welcome to My Django Application. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio id aperiam facere maxime, doloremque voluptates optio expedita, maiores ab nisi assumenda laborum soluta est? Magnam nulla voluptas voluptate odit neque.</p>
+    <a href="/signup/" class="btn btn-primary mb-3"> Sign up</a>
+    <a href="/login/" class="btn btn-primary mb-3"> Login</a>
+</div>
+
+{% endblock %}
